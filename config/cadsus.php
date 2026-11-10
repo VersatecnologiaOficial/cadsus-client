@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 return [
     'environment' => 'production',
     'token_safety_margin_seconds' => 60,

@@ -29,7 +29,11 @@
         "psr/simple-cache": "^2.0 || ^3.0"
     },
     "require-dev": {
+        "laravel/framework": "^11.0 || ^12.0",
         "phpunit/phpunit": "^11.0"
+    },
+    "suggest": {
+        "laravel/framework": "Permite registrar o CadsusClientServiceProvider para publicar a configuração e injetar o cliente."
     },
     "autoload": {
         "psr-4": {

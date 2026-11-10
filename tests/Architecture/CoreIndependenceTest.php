@@ -10,10 +10,11 @@ final class CoreIndependenceTest extends TestCase
 {
     public function testCoreDoesNotDependOnLaravelOrApplicationModels(): void
     {
+        // O service provider é o único ponto de integração com Laravel e é opcional.
         $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(dirname(__DIR__, 2) . '/src'));
 
         foreach ($iterator as $file) {
-            if (!$file->isFile() || $file->getExtension() !== 'php') {
+            if (!$file->isFile() || $file->getExtension() !== 'php' || $file->getFilename() === 'CadsusClientServiceProvider.php') {
                 continue;
             }
 

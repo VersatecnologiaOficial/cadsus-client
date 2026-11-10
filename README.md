@@ -23,11 +23,17 @@ composer install
 composer test
 ```
 
-Durante o desenvolvimento dentro do VersaSaúde, também é possível executar a suíte com o PHPUnit do projeto pai:
+A suíte usa apenas o `vendor/autoload.php` do próprio pacote; rode `composer install` na raiz do pacote antes de `composer test`.
+
+## Laravel
+
+O `Versatecnologia\Cadsus\CadsusClientServiceProvider` é opcional. Registre-o em `bootstrap/providers.php` e publique a configuração:
 
 ```bash
-../../vendor/bin/phpunit -c phpunit.xml.dist
+php artisan vendor:publish --tag=cadsus-client-config
 ```
+
+O provider também registra `CadsusClient` (e `CadsusClientInterface`) como singleton no container.
 
 ## API pública
 

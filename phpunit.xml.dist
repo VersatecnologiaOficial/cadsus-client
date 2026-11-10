@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
-         bootstrap="tests/bootstrap.php"
+         bootstrap="vendor/autoload.php"
          colors="true"
          cacheDirectory=".phpunit.cache">
     <testsuites>
@@ -13,6 +13,9 @@
         </testsuite>
         <testsuite name="architecture">
             <directory>tests/Architecture</directory>
+        </testsuite>
+        <testsuite name="laravel">
+            <directory>tests/Laravel</directory>
         </testsuite>
     </testsuites>
 </phpunit>
