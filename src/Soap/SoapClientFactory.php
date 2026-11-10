@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\Soap;
 
 use SoapClient;
@@ -10,9 +8,7 @@ use Versatecnologia\Cadsus\Environment\CadsusEnvironment;
 
 final class SoapClientFactory
 {
-    public function __construct(private readonly ?string $wsdlPath = null)
-    {
-    }
+    public function __construct(private readonly ?string $wsdlPath = null) {}
 
     public function create(CadsusEnvironment $environment, AccessToken $token): SoapClient
     {

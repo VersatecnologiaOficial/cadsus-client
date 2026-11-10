@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 final readonly class CadsusIdentifier
@@ -11,7 +9,5 @@ final readonly class CadsusIdentifier
         public string $value,
         public string $oid,
         public ?string $assigningAuthorityName = null,
-    )
-    {
-    }
+    ) {}
 }

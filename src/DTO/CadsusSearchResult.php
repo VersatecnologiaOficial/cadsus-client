@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 final readonly class CadsusSearchResult
@@ -14,8 +12,7 @@ final readonly class CadsusSearchResult
         public ?string $continuationPointer,
         public string $correlationId,
         public array $warnings = [],
-    ) {
-    }
+    ) {}
 
     public function isEmpty(): bool
     {

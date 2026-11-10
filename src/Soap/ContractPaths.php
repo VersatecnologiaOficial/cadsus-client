@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\Soap;
 
 final class ContractPaths
@@ -21,7 +19,5 @@ final class ContractPaths
         return self::root() . '/schema/HL7V3/NE2008/multicacheschemas/PRPA_IN201305UV02.xsd';
     }
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 }

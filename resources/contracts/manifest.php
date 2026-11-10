@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
-return array (
+return array(
   'manual_version' => '2.1',
   'domains_source_sha256' => '79123458147077a7012d51dc74107d9cf2a313221430a5015238c3da9f3903b9',
   'postman_source_sha256' => '3fdcfb5e1674a5d429df96082623f272dce64a58d0ca61a4c9076374a397a253',
-  'files' => 
-  array (
+  'files' =>
+  array(
     'schema/HL7V3/NE2008/coreschemas/NarrativeBlock.xsd' => 'eefd27479a5fe14b76c6a02f5ff331c73f06d1ace86077a82b9d151d3235cff1',
     'schema/HL7V3/NE2008/coreschemas/datatypes-base.xsd' => '35c2261a66d9d0b21ab3221fd2116c95bfd634cb51ea3d64963c427cbfd1b204',
     'schema/HL7V3/NE2008/coreschemas/datatypes.xsd' => '1e3b6738976399228d4b9dbee11f7ead97f8e8b0f8e695978cdf5746529a16da',

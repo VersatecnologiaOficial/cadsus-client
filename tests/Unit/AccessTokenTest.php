@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\Tests\Unit;
 
 use DateTimeImmutable;

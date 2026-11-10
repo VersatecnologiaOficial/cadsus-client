@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 final readonly class CadsusAddress
@@ -18,6 +16,5 @@ final readonly class CadsusAddress
         public ?string $countryCode = null,
         public ?string $use = null,
         public ?string $streetTypeCode = null,
-    ) {
-    }
+    ) {}
 }

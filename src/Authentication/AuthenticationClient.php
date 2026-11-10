@@ -1,6 +1,7 @@
 <?php
-declare(strict_types=1);
+
 namespace Versatecnologia\Cadsus\Authentication;
+
 use DateTimeImmutable;
 use GuzzleHttp\ClientInterface;
 use Throwable;
@@ -8,6 +9,7 @@ use Versatecnologia\Cadsus\Certificate\TemporaryCertificate;
 use Versatecnologia\Cadsus\DTO\AccessToken;
 use Versatecnologia\Cadsus\DTO\CadsusCredentials;
 use Versatecnologia\Cadsus\Exceptions\CadsusException;
+
 final readonly class AuthenticationClient
 {
     public function __construct(private ClientInterface $http, private int $timeoutSeconds = 10) {}
@@ -18,7 +20,9 @@ final readonly class AuthenticationClient
             $response = $this->http->request('GET', $credentials->environment->authenticationEndpoint(), [
                 'headers' => ['Accept' => 'application/json'],
                 'cert' => [$certificate->path, $credentials->certificatePassword],
-                'connect_timeout' => $this->timeoutSeconds, 'timeout' => $this->timeoutSeconds, 'verify' => true,
+                'connect_timeout' => $this->timeoutSeconds,
+                'timeout' => $this->timeoutSeconds,
+                'verify' => true,
             ]);
             $data = json_decode((string) $response->getBody(), true, flags: JSON_THROW_ON_ERROR);
             if (!is_string($data['access_token'] ?? null) || $data['access_token'] === '') {
@@ -26,10 +30,16 @@ final readonly class AuthenticationClient
             }
             $ttl = max(1, (int) ($data['expires_in'] ?? 1800));
             // O EHR Auth atual informa 1.800.000 milissegundos para 30 minutos.
-            if ($ttl > 86400) { $ttl = max(1, intdiv($ttl, 1000)); }
+            if ($ttl > 86400) {
+                $ttl = max(1, intdiv($ttl, 1000));
+            }
             return new AccessToken($data['access_token'], new DateTimeImmutable("+{$ttl} seconds"), (string) ($data['token_type'] ?? 'jwt'));
-        } catch (CadsusException $exception) { throw $exception; }
-        catch (Throwable $exception) { throw new CadsusException('Não foi possível autenticar no CADSUS.', 'authentication', false, $exception); }
-        finally { $certificate->remove(); }
+        } catch (CadsusException $exception) {
+            throw $exception;
+        } catch (Throwable $exception) {
+            throw new CadsusException('Não foi possível autenticar no CADSUS.', 'authentication', false, $exception);
+        } finally {
+            $certificate->remove();
+        }
     }
 }

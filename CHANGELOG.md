@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 - 2026-11-10
 
 - Fundação inicial do pacote.
 - Contratos e DTOs públicos básicos.

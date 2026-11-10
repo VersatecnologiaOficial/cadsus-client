@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 use DateTimeImmutable;
@@ -30,6 +28,5 @@ final readonly class CadsusCitizen
         public ?int $matchScore = null,
         /** @var list<CadsusIdentifier> */
         public array $sourceIdentifiers = [],
-    ) {
-    }
+    ) {}
 }

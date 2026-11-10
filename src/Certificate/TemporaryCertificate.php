@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\Certificate;
 
 use Versatecnologia\Cadsus\Exceptions\CadsusException;

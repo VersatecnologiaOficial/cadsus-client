@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\Tests\Contract;
 
 use PHPUnit\Framework\TestCase;

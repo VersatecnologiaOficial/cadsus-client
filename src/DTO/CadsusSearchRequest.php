@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 use DateTimeImmutable;
@@ -19,8 +17,7 @@ final readonly class CadsusSearchRequest
         public ?DateTimeImmutable $birthDate = null,
         public ?CadsusGender $gender = null,
         public ?string $birthCityCode = null,
-    ) {
-    }
+    ) {}
 
     public static function byCpf(string $cpf): self
     {
@@ -44,7 +41,7 @@ final readonly class CadsusSearchRequest
         ?CadsusGender $gender = null,
         ?string $birthCityCode = null,
     ): self {
-        $values = array_filter([$name, $motherName, $birthDate, $gender, $birthCityCode], static fn (mixed $value): bool => $value !== null && $value !== '');
+        $values = array_filter([$name, $motherName, $birthDate, $gender, $birthCityCode], static fn(mixed $value): bool => $value !== null && $value !== '');
 
         if (count($values) < 2) {
             throw new InvalidArgumentException('A pesquisa demográfica exige pelo menos dois critérios.');

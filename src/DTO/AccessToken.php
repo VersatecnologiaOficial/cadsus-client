@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Versatecnologia\Cadsus\DTO;
 
 use DateTimeImmutable;
@@ -12,8 +10,7 @@ final readonly class AccessToken
         private string $value,
         public DateTimeImmutable $expiresAt,
         public string $type = 'jwt',
-    ) {
-    }
+    ) {}
 
     public function authorizationHeader(): string
     {
