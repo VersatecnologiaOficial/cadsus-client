@@ -1,22 +1,8 @@
 {
-    "name": "versatecnologia/cadsus-client",
+    "name": "versatecnologiaoficial/cadsus-client",
     "description": "Cliente privado para autenticação e consultas CADSUS/CNS-PDQ.",
     "type": "library",
     "license": "proprietary",
-    "keywords": [
-        "cadsus",
-        "cns",
-        "pdq",
-        "hl7",
-        "sus",
-        "rnds"
-    ],
-    "authors": [
-        {
-            "name": "Fernando Maia",
-            "email": "fernando.maia@versatecnologia.com.br"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "ext-dom": "*",
@@ -29,11 +15,7 @@
         "psr/simple-cache": "^2.0 || ^3.0"
     },
     "require-dev": {
-        "laravel/framework": "^11.0 || ^12.0",
         "phpunit/phpunit": "^11.0"
-    },
-    "suggest": {
-        "laravel/framework": "Permite registrar o CadsusClientServiceProvider para publicar a configuração e injetar o cliente."
     },
     "autoload": {
         "psr-4": {
